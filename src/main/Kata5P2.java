@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.List;
 import model.*;
 import static view.MailHistogramBuilder.build;
-import static view.MailListReader.read;
+import view.MailListReaderBD;
 
 
 public class Kata5P2 {
@@ -17,8 +17,6 @@ public class Kata5P2 {
         }catch (IOException e){
             System.out.println (e.toString());
         }
-        
-        
     }    
     
     private List<Mail> mailList;
@@ -31,7 +29,7 @@ public class Kata5P2 {
     }
     
     private void input() throws IOException {
-        mailList = read("C:/Users/ferna/Documents/NetBeansProjects/Kata4/email.txt");
+        mailList = MailListReaderBD.read();
     }
     
     private void process() throws IOException {
